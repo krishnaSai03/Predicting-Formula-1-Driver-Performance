@@ -91,51 +91,51 @@ The bar chart highlights the top 10 drivers by race wins, with Lewis Hamilton le
 ![image](https://github.com/user-attachments/assets/dfb7f4bd-93a7-4498-ba74-00bf3d85cdae)
 #### 7. Model Selection & Training
 ##### Importing Libraries:
-•	Linear Regression, Random Forest Regressor, Decision Tree Regressor, and polynomial regression are imported for building regression models.
-•	mean_squared_error and r2  score are used to evaluate the models' performance.
-•	train_test_split is used to split the data into training and testing sets.
+•	Linear Regression, Random Forest Regressor, Decision Tree Regressor, and polynomial regression are imported for building regression models.  
+•	mean_squared_error and r2  score are used to evaluate the models' performance.  
+•	train_test_split is used to split the data into training and testing sets.  
 ##### Splitting Data into Features and Target:
-•	X contains the features (all columns except driver_points), which will be used to predict the target variable.
-•	Y is the target variable, driver_points, which is continuous and will be predicted.
+•	X contains the features (all columns except driver_points), which will be used to predict the target variable.  
+•	Y is the target variable, driver_points, which is continuous and will be predicted.  
 ##### Splitting Data into Training and Testing Sets:
-The data is split into training (80%) and testing (20%) sets using train_test_split.
-•	random_state=42 ensures reproducibility of the split.
+The data is split into training (80%) and testing (20%) sets using train_test_split.  
+•	random_state=42 ensures reproducibility of the split.  
 #### 8. Model Evaluation
 ##### 1. Linear Regression:
-•	Mean Squared Error (MSE): 5.327 indicates relatively high prediction error compared to the other models.
-•	R² Score: 0.7128 shows that the model explains about 71% of the variance in the target variable, which is decent but not the best performance among the models.
-•	Evaluation: Linear Regression is limited in capturing nonlinear relationships, which may explain its relatively lower performance compared to other models.
+•	Mean Squared Error (MSE): 5.327 indicates relatively high prediction error compared to the other models.  
+•	R² Score: 0.7128 shows that the model explains about 71% of the variance in the target variable, which is decent but not the best performance among the models.  
+•	Evaluation: Linear Regression is limited in capturing nonlinear relationships, which may explain its relatively lower performance compared to other models.  
 ##### 2. Random Forest:
-•	MSE: 0.081, the lowest among all models, signifies minimal prediction error.
-•	R² Score: 0.9956, near perfect, indicating that Random Forest explains almost all the variance in the target variable.
-•	Evaluation: Random Forest performs exceptionally well, capturing complex patterns and providing accurate predictions. It is the best-performing model in this case.
+•	MSE: 0.081, the lowest among all models, signifies minimal prediction error.  
+•	R² Score: 0.9956, near perfect, indicating that Random Forest explains almost all the variance in the target variable.  
+•	Evaluation: Random Forest performs exceptionally well, capturing complex patterns and providing accurate predictions. It is the best-performing model in this case.  
 ![image](https://github.com/user-attachments/assets/fa6ce942-de9b-4752-b105-23367d9e3088)
 
 ##### 3. Decision Tree:
-•	MSE: 0.228, slightly higher than Random Forest but significantly lower than Linear Regression.
-•	R² Score: 0.9877, excellent performance, explaining nearly 99% of the variance.
-•	Evaluation: Decision Tree performs well but is slightly less accurate than Random Forest. It may be prone to overfitting compared to ensemble methods like Random Forest.
+•	MSE: 0.228, slightly higher than Random Forest but significantly lower than Linear Regression.  
+•	R² Score: 0.9877, excellent performance, explaining nearly 99% of the variance.  
+•	Evaluation: Decision Tree performs well but is slightly less accurate than Random Forest. It may be prone to overfitting compared to ensemble methods like Random Forest.  
 ##### 4. Polynomial Linear Regression:
-•	R² Score: 0.9538, a significant improvement over basic Linear Regression, indicating that polynomial features help capture nonlinear relationships.
-•	Evaluation: Polynomial Linear Regression effectively models nonlinearity but doesn’t match the performance of Random Forest or Decision Tree. Its slightly lower score might indicate overfitting to the training data.
+•	R² Score: 0.9538, a significant improvement over basic Linear Regression, indicating that polynomial features help capture nonlinear relationships.  
+•	Evaluation: Polynomial Linear Regression effectively models nonlinearity but doesn’t match the performance of Random Forest or Decision Tree. Its slightly lower score might indicate overfitting to the training data.  
 
 #### 9. Insights and Interpretations
-•	Key Predictors: Variables such as driver age, constructor points, and race time significantly influence driver points. Constructors with a history of strong performance consistently contribute to higher driver points.
-•	Nonlinearity Captured: Polynomial features revealed that some relationships between variables and target outcomes are nonlinear, improving model performance.
-•	Model Performance: Random Forest emerged as the most reliable model, with near-perfect R2 and minimal error, indicating its ability to handle complex, nonlinear relationships and interactions between variables.
-•	Impact of Constructors: Updated constructor names (e.g., Force India → Aston Martin) reflected the importance of historical and contextual data alignment in model accuracy.
+•	Key Predictors: Variables such as driver age, constructor points, and race time significantly influence driver points. Constructors with a history of strong performance consistently contribute to higher driver points.  
+•	Nonlinearity Captured: Polynomial features revealed that some relationships between variables and target outcomes are nonlinear, improving model performance.  
+•	Model Performance: Random Forest emerged as the most reliable model, with near-perfect R2 and minimal error, indicating its ability to handle complex, nonlinear relationships and interactions between variables.  
+•	Impact of Constructors: Updated constructor names (e.g., Force India → Aston Martin) reflected the importance of historical and contextual data alignment in model accuracy.  
 #### 10. Challenges Faced
-•	Data Cleaning: Missing values were initially represented as strings ('\N'), requiring careful replacement with NaN for proper handling and imputation.
-•	Feature Engineering: Creating meaningful features, such as driver age at race and converting lap times to milliseconds, demanded detailed domain knowledge and preprocessing effort.
-•	High Dimensionality: The dataset included numerous features, requiring careful feature selection to reduce computational complexity without losing critical information.
-•	Overfitting Risks: Complex models like Random Forest and Polynomial Regression required balancing accuracy with generalization to avoid overfitting.
+•	Data Cleaning: Missing values were initially represented as strings ('\N'), requiring careful replacement with NaN for proper handling and imputation.  
+•	Feature Engineering: Creating meaningful features, such as driver age at race and converting lap times to milliseconds, demanded detailed domain knowledge and preprocessing effort.  
+•	High Dimensionality: The dataset included numerous features, requiring careful feature selection to reduce computational complexity without losing critical information.  
+•	Overfitting Risks: Complex models like Random Forest and Polynomial Regression required balancing accuracy with generalization to avoid overfitting.  
 #### 11. Conclusion and Recommendations
 ##### Conclusion: The project successfully identified key factors affecting F1 race outcomes and built a robust predictive model. Random Forest achieved the best performance, demonstrating its capability to model intricate relationships in the dataset.
 ##### Recommendations:
-1.	Incorporating real-time race data to enhance model applicability for live predictions.
-2.	Using ensemble methods like Gradient Boosting to explore further performance improvements.
-3.	Expanding the dataset with additional variables, such as weather conditions and pit stop strategies, to capture more race dynamics.
-4.	Continuously updating constructor and driver information to maintain model relevance.
+1.	Incorporating real-time race data to enhance model applicability for live predictions.  
+2.	Using ensemble methods like Gradient Boosting to explore further performance improvements.  
+3.	Expanding the dataset with additional variables, such as weather conditions and pit stop strategies, to capture more race dynamics.  
+4.	Continuously updating constructor and driver information to maintain model relevance.  
 
 #### 12. References
 •	Formula 1 ERGAST Database (for historical race data) (https://ergast.com/mrd/)  
